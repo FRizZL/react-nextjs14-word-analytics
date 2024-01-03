@@ -26,7 +26,9 @@ export default function Stats({
 function Stat({ number = 0, label }: { number?: number; label: string }) {
   return (
     <section className="stat">
-      <span className="stat__number">{number}</span>
+      <span className={`stat__number ${number < 0 && "stat__number--limit"}`}>
+        {number}
+      </span>
       <h2 className="second-heading">{label}</h2>
     </section>
   );
