@@ -5,14 +5,14 @@ export default function Stats({
     instagramCharactersLeft,
     facebookCharactersLeft,
   },
-}: {
+}: Readonly<{
   stats: {
     numberOfWords: number;
     numberOfCharacters: number;
     instagramCharactersLeft: number;
     facebookCharactersLeft: number;
   };
-}) {
+}>) {
   return (
     <section className="stats">
       <Stat number={numberOfWords} label="Words" />
@@ -23,7 +23,7 @@ export default function Stats({
   );
 }
 
-function Stat({ number = 0, label }: { number?: number; label: string }) {
+function Stat({ number = 0, label }: Readonly<{ number?: number; label: string }>) {
   return (
     <section className="stat">
       <span className={`stat__number ${number < 0 && "stat__number--limit"}`}>

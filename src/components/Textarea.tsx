@@ -4,10 +4,10 @@ import Warning from "./Warning";
 export default function Textarea({
   text,
   setText,
-}: {
+}: Readonly<{
   text: string;
   setText: (text: string) => void;
-}) {
+}>) {
   const [warningText, setWarningText] = useState("");
 
   const handleChange: ChangeEventHandler<HTMLTextAreaElement> = (
